@@ -1,0 +1,268 @@
+@import './styles/variables';
+
+.nav{
+display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #EFFFFA;
+  
+  height: 100vh;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: 576px) {
+      width: 100%;
+    }
+
+  a {
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 2rem 0;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    color: #0D0C1D;
+    text-decoration: none;
+    transition: color 0.3s linear;
+
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+// Menu desplegable
+
+$menu-bg: $blanco;
+$menu-color: $blanco;
+$menu-font-size: 74px;
+$menu-zindex: 1100;
+$hamburger-color: $blanco;
+$hamburger-width: 50px;
+$hamburger-height: 50px;
+$hamburger-zindex: $menu-zindex + 10;
+
+    #menu {
+        background: $menu-bg;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        overflow: hidden;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        transition: all 0.7s ease-in-out;
+        // For some sweet fadez
+        visibility: hidden;
+        width: 100%;
+        z-index: $menu-zindex;
+      
+        &.open {
+          opacity: 1;
+          visibility: visible;
+      
+          @for $i from 1 through 10 {
+            li:nth-child(#{$i}) {
+              animation-delay: $i*0.1s;
+            }
+          }
+      
+          li {
+            animation-duration: 1.0s;
+            animation-fill-mode: both;
+            animation-name: fadeInUp;
+          }
+        }
+      
+        ul {
+          &:hover {
+            a {
+              opacity: 0.5;
+            }
+          }
+      
+          a {
+            // Stops it being a twitchy mess in chrome :pray:
+            // https://www.binarymoon.co.uk/2014/02/fixing-css-transitions-in-google-chrome/
+            transform: translateZ(0);
+            transition: opacity 0.3s ease-in-out;
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      
+        .main-nav {          
+            display: flex;
+            align-items: center;
+          width: 70%;
+          height: 100%;
+          position: relative;
+          top: 50%;
+          background-color: $primary;
+          transform: translateY(-50%);
+      
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 106px;
+            display: flex;
+            flex-direction: column;
+            
+          }
+      
+          a {
+            color: $menu-color;
+            display: block;
+            font-size: $menu-font-size;
+            font-weight: 400;
+            padding: 1rem 1rem;
+            text-decoration: none;
+            line-height: 74px;
+            text-align: left;
+            
+            &:first {
+              padding-top: 0;
+            }
+          }
+        }
+      
+        .menu-footer {
+            display: flex;
+            flex-direction: column;
+          padding: 2rem;
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          right: 0;
+          width: 30%;
+      
+          ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            &:hover {
+                a {
+                  opacity: 1;
+                }
+              }
+      
+            li {
+              display: inline;
+              margin-right: 1.9rem;
+
+              a {
+                color: #222221;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                &:hover{
+                    color: $gris;
+                }
+              }
+            }
+          }
+      
+          
+
+          .contact-menu{
+            max-width: 80%;
+            text-align: left;
+
+            p:first-child{
+                font-size: 30px;
+            }
+            p:last-child{
+                font-size: 16px;
+                line-height: 30px;
+            }
+
+          }
+        }
+      }
+      
+      
+      // Hamburger menu toggler stuff below
+      .toggle-menu {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        height: $hamburger-height;
+        outline: none;
+        padding: 0;
+        pointer-events: initial;
+        position: relative;
+        vertical-align: middle;
+        width: $hamburger-width;
+        z-index: $hamburger-zindex;
+        justify-content: flex-end;
+      
+        span {
+          background-color: $hamburger-color;
+          content: "";
+          display: block;
+          height: 3px;
+          left: calc(50% - 13px );
+          position: absolute;
+          top: calc(50% - 1px );
+          transform-origin: 50% 50%;
+          transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  transform 0.2s linear;
+          width: 20px;
+          border-radius: 2px;
+      
+          &:before, &:after {
+            background-color: $hamburger-color;
+            content: "";
+            display: block;
+            height: 3px;
+            margin-left: -6px;
+            position: absolute;
+            transform-origin: 50% 50%;
+            transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  transform 0.2s linear;
+            width: 26px;
+            border-radius: 2px;
+          }
+      
+          &:before {
+            top: 7px;
+          }
+      
+          &:after {
+            top: -7px;
+          }
+        }
+      
+        &.active {
+          span {
+            background-color: transparent;
+            transition: background 0.2s ease-out;
+      
+            &:before, &:after {
+              transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+            }
+      
+            &:before {
+                background-color: $blanco;
+              top: 0;
+              transform: rotate3d(0, 0, 1, -45deg);
+            }
+      
+            &:after {
+                background-color: $blanco;
+              top: 0;
+              transform: rotate3d(0, 0, 1, 45deg);
+            }
+          }
+        }
+      }

@@ -1,0 +1,21 @@
+$primary: #E6484B;
+$azulclaro: #23AAE1;
+$verde: #76CBBD;
+$amarillo: #FCBE2F;
+$rojo: #F2481B;
+$gris: #a0a0a0;
+$negro: #000;
+$blanco: #FFF;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+$Poppins: 'Poppins', sans-serif;
+body{
+    font-family: $Poppins;
+    font-size: 16px;
+}
+
+//Responsive
+    $break-small: 576px;
+    $break-medium: 767px;
+    $break-large: 1023px;
+    $break-extralarge: 1199px;

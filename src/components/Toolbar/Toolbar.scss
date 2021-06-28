@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+
+.toolbar{
+  
+    &__navigation{
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    &__list{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    &__item{
+        padding: 0 0.5rem;
+    }    
+    
+    &__link{
+        color: #000;
+
+        &:hover, &:active{
+            color: $primary;
+        }
+    }
+}
+
+@media(max-width: $break-medium){
+    .toolbar__list{
+        display: none;
+    }
+}
+
+@media (min-width: $break-medium + 1){
+    .toolbar{
+
+        &__navigation{
+            margin:15px;
+            justify-content: space-between;
+        }
+
+        &__button{
+            display: none;
+        }
+
+        &__menu{
+            order:2;
+        }
+
+        &__logo{
+            order:1;
+            margin-right: 2em;
+        }
+    }
+}
