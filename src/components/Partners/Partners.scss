@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.partners{
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+
+    &__image{
+        width: 100%;
+    }
+}
+
+@media(min-width:$break-medium){
+    .partners{
+        margin: 5% 33%;
+    }
+}

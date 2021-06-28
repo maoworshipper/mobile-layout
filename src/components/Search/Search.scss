@@ -1,0 +1,128 @@
+@import '../../styles/variables';
+
+.search{
+  background: url('../../assets/images/bg-qs.png');
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 438px;
+
+  &__container{
+    width: 90%;
+    color: $blanco;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    row-gap: 20px;
+    height: 100%;
+
+  .search__title{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+    margin: 10px 0 0 0;
+  }
+
+  .search__control{
+      display: flex;
+      flex-direction: row;
+      column-gap: 10px;
+      background: $blanco;
+      border: 1px solid $gris2;
+      border-radius: 4px;
+      height: 60px;
+      padding:8px;
+      width: 380px;
+  }
+
+  .search__controlicon{
+      align-self: center;
+  }
+
+  .search__control--column{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search__label{
+    color: $grisoscuro;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+
+  .search__input{
+    color: $negro;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    width: 96%;
+    padding: 6px 10px;
+    margin-left: -10px;
+    outline-color: transparent;
+
+    &::placeholder{
+        color: $negro;
+    }
+
+    &:focus, &:active, &:focus-visible{
+        outline-color: $gris2;
+    }
+  }
+
+  .search__control--group{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 90%;
+  }
+
+  .search__control--dateout{
+      width: 45%;
+      height: 60px;
+      padding: 10px;
+      overflow: hidden;
+      border-radius: 4px 0 0 4px;
+      border-right: 1px solid $gris2;
+      
+  }
+
+  .search__control--datein{
+    width: 45%;
+    height: 60px;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 0 4px 4px 0;
+    border-left: 0;
+  }
+
+  .search__button{
+    padding: 15px 25px;
+    background: $primary;
+    border: 6px solid $blanco;
+    border-radius: 15px;
+    margin-top: 1.2em;
+    cursor: pointer;
+    box-shadow: 0px 3px 4px rgba($color: #000000, $alpha: 0.16);;
+  }
+}
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: none;
+}
+
+@media(min-width: $break-medium){
+  .search{
+    background-size:contain;
+  }
+  .search__container{
+    width: 33%;
+  }
+  
+}

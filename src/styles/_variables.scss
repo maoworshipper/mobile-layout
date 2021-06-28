@@ -1,14 +1,14 @@
 $primary: #E6484B;
-$azulclaro: #23AAE1;
-$verde: #76CBBD;
-$amarillo: #FCBE2F;
-$rojo: #F2481B;
 $gris: #a0a0a0;
+$gris2: #c8c8c8;
+$grisoscuro: #6e6e6e;
+$grisclaro: #e6e6e6;
 $negro: #000;
 $blanco: #FFF;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto&display=swap');
 $Poppins: 'Poppins', sans-serif;
+$Roboto: 'Roboto', sans-serif;
 body{
     font-family: $Poppins;
     font-size: 16px;

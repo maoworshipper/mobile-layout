@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import CloseButton from "./components/SideDrawer/CloseButton";
+import Search from './components/Search/Search';
+import Banner from './components/Banner/Banner';
+import Rating from './components/Rating/Rating';
+import Partners from './components/Partners/Partners';
 
 function App() {
 
@@ -31,9 +34,10 @@ function App() {
       {sideDrawer}
       {closeButton}
       <main>
-        <p>
-          Contenido
-        </p>
+        <Search />
+        <Banner />
+        <Rating />
+        <Partners />
       </main>
    
     </div>

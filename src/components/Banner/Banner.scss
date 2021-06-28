@@ -1,0 +1,67 @@
+@import '../../styles/variables';
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 9% 9% 2% 9%;
+}
+.banner{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+    border: 1px solid $grisclaro;
+    border-radius: 5px;
+    padding: 10px;
+
+    &__row{
+        display: flex;
+        flex-direction: row;
+        column-gap: 0px;
+    }
+
+    &__image{
+        width: 180px;
+        height: 100px;
+    }
+
+    &__title{
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 26px;
+        text-align: center;
+
+        &--primary{
+            display: inline;
+            color: $primary;
+        }
+    }
+
+    &__text{
+        align-self: center;
+        margin: 2% 5%;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        text-align: center;
+    }
+}
+
+@media(min-width:$break-medium){
+    .container{
+        margin: 3% 30% 2% 30%;
+    }
+    .banner{
+           
+        &__row{
+            justify-content: center;
+            margin: 2% 5%;
+        }
+
+        &__title{
+            font-size: 26px;
+            font-weight: 600;
+            line-height: 26px;
+        }
+    }
+  }  

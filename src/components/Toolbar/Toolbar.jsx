@@ -28,10 +28,10 @@ const Toolbar = props  => {
         </ul>
       </div>
       <div className="toolbar__logo">
-        <a href="/"><img src={Logo} /></a>
+        <a href="/"><img src={Logo} alt="miles car rental" /></a>
       </div>
       <div className="toolbar__spacer" />
-      <div>
+      <div className="toolbar__groupicon">
         <img className="toolbar__icon" src={Money} alt="Money" />
         <img className="toolbar__icon" src={Colombia} alt="Colombia" />
       </div>
