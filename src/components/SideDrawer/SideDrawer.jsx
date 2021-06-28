@@ -2,6 +2,7 @@ import React from 'react';
 import CloseButton from './CloseButton';
 import './SideDrawer.scss';
 import Logo from '../../assets/images/logo.png'
+import Colombia from '../../assets/images/bandera.png'
 import Facebook from '../../assets/images/facebook.svg'
 import Twitter from '../../assets/images/twitter.svg'
 import Google from '../../assets/images/google.svg'
@@ -17,6 +18,9 @@ const SideDrawer = props => {
             <div className="side-drawer__logo">
                 <a href="/"><img src={Logo} alt="" /></a>
             </div>
+            <span className="side-drawer__bandera">
+                <img className="" src={Colombia} alt="Colombia" />
+            </span>
             <ul className="side-drawer__list">
                <li><a className="side-drawer__link" href="/">Requisitos de Alquiler</a></li>
                <li><a className="side-drawer__link" href="/">Preguntas frecuentes</a></li> 
@@ -32,13 +36,6 @@ const SideDrawer = props => {
                 </ul>
                </a></li> 
             </ul>
-            {/*<div className="side-drawer__social">
-                <h3>SIGUENOS EN</h3>
-                <ul className="side-drawer__list side-drawer__list--social">
-                    <li><a href="/"><i class="side-drawer__icon side-drawer__icon--facebook"></i></a></li>
-                    <li><a href="/"><i class="side-drawer__icon side-drawer__icon--twitter"></i></a></li>
-                </ul>
-            </div>*/}
         </nav>
     )
 }

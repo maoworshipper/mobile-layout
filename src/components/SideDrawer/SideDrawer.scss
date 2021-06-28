@@ -35,6 +35,10 @@
         }
     }
 
+    &__spacer{
+        flex: 1;
+    }
+
     &__socialtitle{
         color: $gris;
         font-weight: 500;
@@ -51,6 +55,13 @@
     &__icon{
         display: inline-block;
         margin-right: 1.5em;
+    }
+
+    &__bandera{
+        position: absolute;
+        top:0;
+        right: 0;
+        margin:15px
     }
 
 }

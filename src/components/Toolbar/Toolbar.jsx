@@ -1,6 +1,8 @@
 import React from 'react'
 import './Toolbar.scss'
 import Logo from '../../assets/images/logo.png'
+import Money from '../../assets/images/coin-icon.svg'
+import Colombia from '../../assets/images/bandera.png'
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton'
 
 const Toolbar = props  => {
@@ -27,6 +29,11 @@ const Toolbar = props  => {
       </div>
       <div className="toolbar__logo">
         <a href="/"><img src={Logo} /></a>
+      </div>
+      <div className="toolbar__spacer" />
+      <div>
+        <img className="toolbar__icon" src={Money} alt="Money" />
+        <img className="toolbar__icon" src={Colombia} alt="Colombia" />
       </div>
     </nav>
     );
